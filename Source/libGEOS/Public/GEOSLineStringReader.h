@@ -12,10 +12,10 @@ public:
 	/*
 	* Parses WKT LineStrings into an array of points
 	*/
-	TArray<FVector> ReadWKT(FString& WKTString);
+	TArray<FVector> ReadWKT(const FString& WKTString);
 
 private:
-	std::unique_ptr<Geometry> ConvertToGeometry_(FString& WKTString);
+	std::unique_ptr<Geometry> ConvertToGeometry_(const FString& WKTString);
 
 	geos::geom::GeometryFactory::Ptr Factory_{};
 	geos::io::WKTReader WKTReader_{};
